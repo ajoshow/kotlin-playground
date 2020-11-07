@@ -1,3 +1,5 @@
+package com.ajoshow.kotlin.ex1
+
 fun main(args: Array<String>) {
     val a = Ex1_A(10)
     a.doubleValue()
@@ -34,11 +36,11 @@ interface Ex1_FunValue {
 open class Ex1_A(override val value: Int) : Ex1_FunValue {
     init{
         // surprise here !!
-        println("Ex1_A value: $value")
+        println("com.ajoshow.kotlin.ex1.Ex1_A value: $value")
         /*
-           public Ex1_A(int value) {
+           public com.ajoshow.kotlin.ex1.Ex1_A(int value) {
              this.value = value;
-             String var2 = "Ex1_A value: " + this.getValue();
+             String var2 = "com.ajoshow.kotlin.ex1.Ex1_A value: " + this.getValue();
              boolean var3 = false;
              System.out.println(var2);
            }
@@ -46,7 +48,7 @@ open class Ex1_A(override val value: Int) : Ex1_FunValue {
     }
 
     override fun doubleValue() {
-        println( "Ex1_A double value: ${value * 2}" )
+        println( "com.ajoshow.kotlin.ex1.Ex1_A double value: ${value * 2}" )
     }
 }
 
@@ -55,11 +57,11 @@ open class Ex1_A(override val value: Int) : Ex1_FunValue {
 data class Ex1_B(override val value: Int) : Ex1_A(value) {
 
     init{
-        println("Ex1_B value: $value")
+        println("com.ajoshow.kotlin.ex1.Ex1_B value: $value")
     }
 
     override fun doubleValue() {
-        println( "Ex1_B double value: ${value * 2}" )
+        println( "com.ajoshow.kotlin.ex1.Ex1_B double value: ${value * 2}" )
     }
 }
 
@@ -69,6 +71,6 @@ class Ex1_C : Ex1_A {
 
 class Ex1_D(override val value: Int) : Ex1_A(value) {
     constructor(value: Int, otherValue: Int) : this(value){
-        println("Ex1_D other value: $otherValue" )
+        println("com.ajoshow.kotlin.ex1.Ex1_D other value: $otherValue" )
     }
 }
